@@ -1,3 +1,23 @@
+## Assignment Information
+
+This project was rebuilt based only on an existing test suite created by another student.
+
+The goal of the assignment was to implement functionality by following automated tests.
+
+## Running Tests
+
+npm install
+npm test -- --watchAll=false
+
+
+The application was developed to satisfy Jest test cases covering:
+
+- Button component
+- Keyboard component
+- Display functionality
+- Calculator page integration
+
+*****************************************************************************************
 It is simple Calculor app 
 
  Features
