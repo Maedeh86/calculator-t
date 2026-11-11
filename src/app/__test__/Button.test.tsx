@@ -1,4 +1,5 @@
-import Button from ".";
+
+import Button from "../../components/Button";
 import {fireEvent, render, screen} from '@testing-library/react'
 
 test('The labal on button is correctly render',()=> {
