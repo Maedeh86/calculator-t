@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react'
-import Header from '.'
+import Header from '../../components/Header'
 
 describe('The header has a expected functionality',()=>{
     test('The header is render prop',()=> {
