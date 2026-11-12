@@ -1,5 +1,5 @@
 import {fireEvent, render, screen} from '@testing-library/react'
-import Keyboard from '.'
+import Keyboard from '../../components/Keyboard'
 
 
 test ('All digit buttons renders on the screen', ()=> {
