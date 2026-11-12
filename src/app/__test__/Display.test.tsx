@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react'
-import Display from '.'
+import Display from '../../components/Display'
 
 test ('show the input and rsult on screen', ()=> {
     render(<Display input={'3*4/6+3'} result='5'/>)
