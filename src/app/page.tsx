@@ -1,6 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import Header from "../components/Header";
+import Display from "../components/Display";
+import Keyboard from "../components/Keyboard";
+import BackButton from "../components/BackButton";
 
 const digits = ["0","1","2","3","4","5","6","7","8","9"];
 const ops = ["+","-","*","/"];
@@ -32,34 +36,32 @@ export default function Home() {
     }
   };
 
-  return (
-    <main>
-      <h1>Calculator</h1>
+  const handleKeyboardClick = (value: string) => {
+  if (value === "=") {
+    evaluate();
+  } else if (value === "clear") {
+  clear();
+  } else {
+    append(value);
+  }
+};
 
-      <div data-testid="displayscreen">
-        <h2>{result}</h2>
-        <h3>{input || result}</h3>
+  
 
-      </div>
+return (
 
-      <div>
-        {digits.map((d) => (
-          <button key={d} type="button" onClick={() => append(d)}>
-            {d}
-          </button>
-        ))}
+  <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4 py-8">
+   <div className="w-full max-w-sm rounded-3xl border border-slate-700 bg-slate-900 p-6 text-white shadow-2xl">
+      <Header pageTitle="Calculator" />
 
-        {ops.map((op) => (
-          <button key={op} type="button" onClick={() => append(op)}>
-            {op}
-          </button>
-        ))}
+      <Display input={input} result={result} />
 
-        <button type="button" onClick={() => append(".")}>.</button>
-        <button type="button" onClick={clear}>clear</button>
-        <button type="button" onClick={backspace}>BackSpace</button>
-        <button type="button" onClick={evaluate}>=</button>
-      </div>
-    </main>
-  );
+      <Keyboard onClick={handleKeyboardClick} />
+
+      <BackButton onBackspace={backspace} />
+    </div>
+  </main>
+);
+
+       
 }
