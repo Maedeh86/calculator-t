@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type { Config } from 'jest'
+import type { Config } from '@jest/types'
 import nextJest from 'next/jest.js'
  
 const createJestConfig = nextJest({
@@ -11,7 +11,7 @@ const createJestConfig = nextJest({
 })
  
 
-const config: Config = {
+const config: Config.InitialOptions = {
   clearMocks: true,
   coverageProvider: 'v8',
   testEnvironment: 'jsdom',
